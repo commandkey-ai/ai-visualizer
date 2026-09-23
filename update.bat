@@ -33,7 +33,7 @@ rem can wire it up once, keeping ai-visualizer.json. It lands on the
 rem Executive Stack release tag named in the ES_RELEASE file, never on a
 rem branch tip:
 rem   git init -b main
-rem   git remote add origin https://github.com/Executive-Stack-LLC/ai-visualizer
+rem   git remote add origin https://github.com/ExecutiveStack/ai-visualizer
 rem   git remote get-url origin   (must print exactly the URL above; if not, stop)
 rem   git fetch --tags origin
 rem   git show <tag>:ES_RELEASE   (must print the tag's own name; the name is
