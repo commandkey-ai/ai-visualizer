@@ -2,6 +2,7 @@
 rem ai-visualizer -- updating has moved. This script does nothing now.
 rem Copyright (C) 2026 Jared Rhodenizer
 rem SPDX-License-Identifier: AGPL-3.0-or-later
+rem Modified by Executive Stack, 2026-09-22 (see NOTICE-EXECUTIVE-STACK.md).
 rem
 rem WHY THIS IS EMPTY, because the reason is worth knowing before anyone
 rem puts it back.
@@ -28,18 +29,24 @@ rem function and calls it at the very end, so bash reads the whole script
 rem into memory before running any of it. It never needed a copy of itself.
 rem
 rem If this folder has no .git yet because it arrived as a zip, an agent
-rem can wire it up once, keeping ai-visualizer.json:
+rem can wire it up once, keeping ai-visualizer.json. It lands on the
+rem Executive Stack release tag named in the ES_RELEASE file, never on a
+rem branch tip:
 rem   git init -b main
-rem   git remote add origin https://github.com/jaredrhod/ai-visualizer
-rem   git fetch origin
-rem   git reset --hard origin/main
+rem   git remote add origin https://github.com/ES-MIRROR-ORG/ai-visualizer
+rem   git fetch --tags origin
+rem   git reset --hard <the tag named in ES_RELEASE>
+rem   git branch --set-upstream-to=origin/es-release main
+rem To update afterwards: git fetch --tags origin, read the release name
+rem from origin/es-release:ES_RELEASE, and check out that tag. That is
+rem exactly what update.sh does on macOS and Linux.
 
 echo.
 echo   Updating has moved, and there is nothing here to run.
 echo.
 echo   Open a chat with your agent and say:
 echo.
-echo       update ai-visualizer and tell me what changed
+echo       update ai-visualizer to the current Executive Stack release and tell me what changed
 echo.
 echo   It does the same job, and it tells you what arrived.
 echo.
