@@ -3,7 +3,7 @@
 This is a **modified version** of `ai-visualizer` by Jared Rhodenizer (upstream: https://github.com/jaredrhod/ai-visualizer), prepared by **Executive Stack** and dated **2026-09-22**.
 
 - Based on upstream commit: `6921e1d4b06bdd4a34c5264882d5257c4d5f70fd` (upstream author `jaredrhod`, dated 2026-08-30).
-- Executive Stack release: `es-2026.09.22-r1` (the name in `ES_RELEASE`), on branch `es-release`.
+- Executive Stack release: `es-2026.09.23-r1` (the name in `ES_RELEASE`), on branch `es-release`.
 - License: unchanged, GNU Affero General Public License v3.0 or later. The `LICENSE` file, every copyright line, and every `SPDX-License-Identifier` header are intact. The VT323 font stays under the SIL Open Font License 1.1 with its license text at `assets/VT323-OFL.txt`. Source for this modified version is the mirror repository itself.
 - Each modified source file carries a "Modified by Executive Stack, 2026-09-22" line near its SPDX header (or an HTML comment at the top of Markdown files).
 - The runtime (`server.py`, `core.js`, `index.html`, every face under `faces/`, every asset, `run.sh`, `run.bat`) is **unchanged** from upstream. Only install and update pointers and documentation were modified.

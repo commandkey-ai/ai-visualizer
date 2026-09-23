@@ -21,7 +21,7 @@ Every face speaks the same signal bus, so switching faces is just opening a diff
 ## Install
 
 ```
-git clone --branch es-2026.09.22-r1 --depth 1 https://github.com/ES-MIRROR-ORG/ai-visualizer
+git clone --branch es-2026.09.23-r1 --depth 1 https://github.com/Executive-Stack-LLC/ai-visualizer
 cd ai-visualizer
 ./run.sh
 ```
@@ -30,7 +30,7 @@ That starts the server and opens the default face (the board, unless you change 
 
 **The easy way to configure it:** open this folder in Claude Code and say *"read ai-visualizer.md and set me up."* The wizard picks your face, your agent's name, and wires your voice line with you.
 
-**Already in a Claude Code session with your agent?** One sentence does the whole install: *"clone https://github.com/ES-MIRROR-ORG/ai-visualizer.git at tag es-2026.09.22-r1, then read ai-visualizer/ai-visualizer.md and set me up."* Your agent clones it, runs the wizard, and wires it in for you.
+**Already in a Claude Code session with your agent?** One sentence does the whole install: *"clone https://github.com/Executive-Stack-LLC/ai-visualizer.git at tag es-2026.09.23-r1, then read ai-visualizer/ai-visualizer.md and set me up."* Your agent clones it, runs the wizard, and wires it in for you.
 
 **The manual way:** copy `ai-visualizer.json.example` to `ai-visualizer.json` (your copy is untracked, so updates never touch it), then edit it. Set `name` to your agent's name (it goes on the chip and in every HUD), and `face` to the one the root URL should open.
 
@@ -42,7 +42,7 @@ Or run the server itself in mock mode and every face rides the synthetic bus: `.
 
 ## Wire your voice
 
-The faces read three tiny files, the same signal-bus contract [backtalk](https://github.com/ES-MIRROR-ORG/backtalk) writes natively:
+The faces read three tiny files, the same signal-bus contract [backtalk](https://github.com/Executive-Stack-LLC/backtalk) writes natively:
 
 ```
 .voice_state        idle | listening | thinking | speaking
@@ -83,7 +83,7 @@ To update on macOS, double-click the `Update` icon setup left on your Desktop, o
 
 ## The rest of it
 
-A face is better with a voice behind it. The visualizer performs your real conversations only when a voice line is wired in, and the agent doing the talking is only as good as the memory behind it. [fullstack-agent](https://github.com/ES-MIRROR-ORG/fullstack-agent) installs the memory, the voice, and the face, and wires them together for you.
+A face is better with a voice behind it. The visualizer performs your real conversations only when a voice line is wired in, and the agent doing the talking is only as good as the memory behind it. [fullstack-agent](https://github.com/Executive-Stack-LLC/fullstack-agent) installs the memory, the voice, and the face, and wires them together for you.
 
 ## Support
 

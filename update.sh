@@ -15,7 +15,7 @@
 main() {
   cd "$(dirname "$0")" || exit 1
   CFG="ai-visualizer.json"
-  MIRROR="https://github.com/ES-MIRROR-ORG/ai-visualizer"
+  MIRROR="https://github.com/Executive-Stack-LLC/ai-visualizer"
   # Named explicitly: a `--depth 1 --branch <tag>` clone is single-branch,
   # so a bare fetch would never learn about es-release.
   REFSPEC="+refs/heads/es-release:refs/remotes/origin/es-release"
