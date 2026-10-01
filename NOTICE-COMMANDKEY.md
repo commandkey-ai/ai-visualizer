@@ -3,7 +3,7 @@
 This is a **modified version** of `ai-visualizer` by Jared Rhodenizer (upstream: https://github.com/jaredrhod/ai-visualizer), prepared by **CommandKey AI** and dated **2026-09-22**, revised **2026-09-23** and **2026-10-01**.
 
 - Based on upstream commit: `6921e1d4b06bdd4a34c5264882d5257c4d5f70fd` (upstream author `jaredrhod`, dated 2026-08-30).
-- CommandKey AI release: `es-2026.10.01-r3` (the name in `ES_RELEASE`), on branch `es-release`.
+- CommandKey AI release: `es-2026.10.04-r4` (the name in `ES_RELEASE`), on branch `es-release`.
 - License: unchanged, GNU Affero General Public License v3.0 or later. The `LICENSE` file, every copyright line, and every `SPDX-License-Identifier` header are intact. The VT323 font stays under the SIL Open Font License 1.1 with its license text at `assets/VT323-OFL.txt`. Source for this modified version is the mirror repository itself.
 - Each modified source file carries a "Modified by CommandKey AI, <date>" line near its SPDX header (or an HTML comment at the top of Markdown files), dated 2026-09-22 or 2026-09-23, the date of the last CommandKey AI edit to that file.
 - The runtime (`server.py`, `core.js`, `index.html`, every face under `faces/`, every asset, `run.sh`, `run.bat`) is **unchanged** from upstream. Only install and update pointers and documentation were modified.

@@ -21,7 +21,7 @@ Every face speaks the same signal bus, so switching faces is just opening a diff
 ## Install
 
 ```
-git clone --branch es-2026.10.01-r3 --depth 1 https://github.com/commandkey-ai/ai-visualizer
+git clone --branch es-2026.10.04-r4 --depth 1 https://github.com/commandkey-ai/ai-visualizer
 cd ai-visualizer
 ./run.sh
 ```
@@ -30,7 +30,7 @@ That starts the server and opens the default face (the board, unless you change 
 
 **The easy way to configure it:** open this folder in Claude Code and say *"read ai-visualizer.md and set me up."* The wizard picks your face, your agent's name, and wires your voice line with you.
 
-**Already in a Claude Code session with your agent?** One sentence does the whole install: *"clone https://github.com/commandkey-ai/ai-visualizer.git at tag es-2026.10.01-r3, then read ai-visualizer/ai-visualizer.md and set me up."* Your agent clones it, runs the wizard, and wires it in for you.
+**Already in a Claude Code session with your agent?** One sentence does the whole install: *"clone https://github.com/commandkey-ai/ai-visualizer.git at tag es-2026.10.04-r4, then read ai-visualizer/ai-visualizer.md and set me up."* Your agent clones it, runs the wizard, and wires it in for you.
 
 **The manual way:** copy `ai-visualizer.json.example` to `ai-visualizer.json` (your copy is untracked, so updates never touch it), then edit it. Set `name` to your agent's name (it goes on the chip and in every HUD), and `face` to the one the root URL should open.
 
