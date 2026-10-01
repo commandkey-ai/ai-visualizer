@@ -1,7 +1,7 @@
-<!-- Modified by Executive Stack, 2026-09-22. See NOTICE-EXECUTIVE-STACK.md. -->
-# ai-visualizer (Executive Stack release)
+<!-- Modified by CommandKey AI, 2026-09-22. See NOTICE-COMMANDKEY.md. -->
+# ai-visualizer (CommandKey AI release)
 
-> **This is the Executive Stack pinned release** of Jared Rhodenizer's ai-visualizer. The runtime is unchanged from upstream; only the install and update pointers were changed so it updates only to release tags Executive Stack has published. Support: your Executive Stack contact.
+> **This is the CommandKey AI pinned release** of Jared Rhodenizer's ai-visualizer. The runtime is unchanged from upstream; only the install and update pointers were changed so it updates only to release tags CommandKey AI has published. Support: your CommandKey AI contact.
 
 **Runs on:** Python 3 and a browser; works with any AI. Pair it with backtalk (Claude Code) for the live show; demo mode works standalone.
 
@@ -21,7 +21,7 @@ Every face speaks the same signal bus, so switching faces is just opening a diff
 ## Install
 
 ```
-git clone --branch es-2026.09.23-r2 --depth 1 https://github.com/ExecutiveStack/ai-visualizer
+git clone --branch es-2026.10.01-r3 --depth 1 https://github.com/commandkey-ai/ai-visualizer
 cd ai-visualizer
 ./run.sh
 ```
@@ -30,7 +30,7 @@ That starts the server and opens the default face (the board, unless you change 
 
 **The easy way to configure it:** open this folder in Claude Code and say *"read ai-visualizer.md and set me up."* The wizard picks your face, your agent's name, and wires your voice line with you.
 
-**Already in a Claude Code session with your agent?** One sentence does the whole install: *"clone https://github.com/ExecutiveStack/ai-visualizer.git at tag es-2026.09.23-r2, then read ai-visualizer/ai-visualizer.md and set me up."* Your agent clones it, runs the wizard, and wires it in for you.
+**Already in a Claude Code session with your agent?** One sentence does the whole install: *"clone https://github.com/commandkey-ai/ai-visualizer.git at tag es-2026.10.01-r3, then read ai-visualizer/ai-visualizer.md and set me up."* Your agent clones it, runs the wizard, and wires it in for you.
 
 **The manual way:** copy `ai-visualizer.json.example` to `ai-visualizer.json` (your copy is untracked, so updates never touch it), then edit it. Set `name` to your agent's name (it goes on the chip and in every HUD), and `face` to the one the root URL should open.
 
@@ -42,7 +42,7 @@ Or run the server itself in mock mode and every face rides the synthetic bus: `.
 
 ## Wire your voice
 
-The faces read three tiny files, the same signal-bus contract [backtalk](https://github.com/ExecutiveStack/backtalk) writes natively:
+The faces read three tiny files, the same signal-bus contract [backtalk](https://github.com/commandkey-ai/backtalk) writes natively:
 
 ```
 .voice_state        idle | listening | thinking | speaking
@@ -79,18 +79,18 @@ The VT323 typeface by Peter Hull, licensed under the SIL Open Font License 1.1 (
 
 ## Updating
 
-To update on macOS, double-click the `Update` icon setup left on your Desktop, or run `./update.sh` in this folder. On Windows, or any time, say **"update ai-visualizer to the current Executive Stack release and tell me what changed"** to your agent, and it does the same job. Updates only ever move to a release tag Executive Stack has published (the name in `ES_RELEASE` on the mirror's `es-release` branch), never to a moving branch. Your config and any custom faces you added stay untouched. Installed through fullstack-agent? `./fullstack-agent/update.sh` (macOS) updates every piece at once and prints what changed.
+To update on macOS, double-click the `Update` icon setup left on your Desktop, or run `./update.sh` in this folder. On Windows, or any time, say **"update ai-visualizer to the current CommandKey AI release and tell me what changed"** to your agent, and it does the same job. Updates only ever move to a release tag CommandKey AI has published (the name in `ES_RELEASE` on the mirror's `es-release` branch), never to a moving branch. Your config and any custom faces you added stay untouched. Installed through fullstack-agent? `./fullstack-agent/update.sh` (macOS) updates every piece at once and prints what changed.
 
 ## The rest of it
 
-A face is better with a voice behind it. The visualizer performs your real conversations only when a voice line is wired in, and the agent doing the talking is only as good as the memory behind it. [fullstack-agent](https://github.com/ExecutiveStack/fullstack-agent) installs the memory, the voice, and the face, and wires them together for you.
+A face is better with a voice behind it. The visualizer performs your real conversations only when a voice line is wired in, and the agent doing the talking is only as good as the memory behind it. [fullstack-agent](https://github.com/commandkey-ai/fullstack-agent) installs the memory, the voice, and the face, and wires them together for you.
 
 ## Support
 
-Support: your Executive Stack contact.
+Support: your CommandKey AI contact.
 
 ## License and credit
 
-Copyright (c) 2026 Jared Rhodenizer. This Executive Stack release is a modified version of the upstream project at https://github.com/jaredrhod/ai-visualizer; the changes are listed in `NOTICE-EXECUTIVE-STACK.md`.
+Copyright (c) 2026 Jared Rhodenizer. This CommandKey AI release is a modified version of the upstream project at https://github.com/jaredrhod/ai-visualizer; the changes are listed in `NOTICE-COMMANDKEY.md`.
 
 Licensed under the GNU Affero General Public License, version 3 or later (AGPL-3.0-or-later). **Use it in your business, commercially, for free.** Run it, change it, build your workflow on top of it, and charge for the work you do with it. The one rule is that it stays open: if you hand it to someone else, or run a modified version as a service other people use, your version ships under this same license with its source available. Credit the author when you build on it. Want it inside a closed-source commercial product? Email license@jaredrhod.com. Full terms are in the LICENSE file and at https://www.gnu.org/licenses/agpl-3.0.html

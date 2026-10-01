@@ -1,4 +1,4 @@
-<!-- Modified by Executive Stack, 2026-09-22. See NOTICE-EXECUTIVE-STACK.md. -->
+<!-- Modified by CommandKey AI, 2026-09-22. See NOTICE-COMMANDKEY.md. -->
 # Troubleshooting
 
 ## The server won't start
@@ -47,4 +47,4 @@ The face only surfaces while the agent is speaking, and it needs `assets/face.pn
 
 ## Updating
 
-Run `./update.sh` in this folder (macOS), or double-click the `Update` icon if setup left one. On Windows, ask your agent: "update ai-visualizer to the current Executive Stack release and tell me what changed." The updater only ever moves to the release tag Executive Stack published (the name in `ES_RELEASE` on the mirror's `es-release` branch), never to a moving branch; it shows what changed before applying it and can never touch your `ai-visualizer.json`. If an older updater said "couldn't fast-forward" or mentioned local changes, run `./update.sh` once and it clears: it moves your config out of git's sight and everything flows after.
+Run `./update.sh` in this folder (macOS), or double-click the `Update` icon if setup left one. On Windows, ask your agent: "update ai-visualizer to the current CommandKey AI release and tell me what changed." The updater only ever moves to the release tag CommandKey AI published (the name in `ES_RELEASE` on the mirror's `es-release` branch), never to a moving branch; it shows what changed before applying it and can never touch your `ai-visualizer.json`. If an older updater said "couldn't fast-forward" or mentioned local changes, run `./update.sh` once and it clears: it moves your config out of git's sight and everything flows after.

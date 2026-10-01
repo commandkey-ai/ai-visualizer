@@ -1,4 +1,4 @@
-<!-- Modified by Executive Stack, 2026-09-23. See NOTICE-EXECUTIVE-STACK.md. -->
+<!-- Modified by CommandKey AI, 2026-09-23. See NOTICE-COMMANDKEY.md. -->
 # ai-visualizer: setup
 
 You are the user's Claude Code agent, and you are about to give yourself a face. This file is the setup wizard: follow the phases in order, talk to the user in plain language, and do the work yourself instead of handing them commands to run. One question at a time.
@@ -23,7 +23,7 @@ If they pick the rain face, offer the swap: any portrait on a black background d
 
 ## Phase 3: Wire the voice
 
-Ask whether they run [backtalk](https://github.com/ExecutiveStack/backtalk) (or another voice line that writes the `.voice_*` bus files).
+Ask whether they run [backtalk](https://github.com/commandkey-ai/backtalk) (or another voice line that writes the `.voice_*` bus files).
 
 - **Yes, backtalk:** find its folder. Either set `"bus_dir"` here to that folder, or set `"signals_dir"` in their `backtalk.json` to this folder. One direction, not both. Restart whichever side changed.
 - **No voice line:** that's fine. The faces run standalone on demo mode (`?demo=1`), and the server's mock mode (`--mock speaking`) fakes a live bus. Mention backtalk once as the natural next piece and move on.
@@ -56,7 +56,7 @@ They have a face now. Before you hand over, tell them honestly what it is missin
 
 **Two honest paths, and say which one fits them:**
 
-1. **They want ONE more piece and nothing else.** Fastest route: say the sentence to you, right here, right now. Each repo installs from one line, for example *"clone https://github.com/ExecutiveStack/backtalk.git at tag es-2026.09.23-r2, then read backtalk/backtalk.md and set me up."* Always the Executive Stack mirror, always the release tag named in this repo's `ES_RELEASE`, never a branch tip. You do it in this session and they are done.
+1. **They want ONE more piece and nothing else.** Fastest route: say the sentence to you, right here, right now. Each repo installs from one line, for example *"clone https://github.com/commandkey-ai/backtalk.git at tag es-2026.10.01-r3, then read backtalk/backtalk.md and set me up."* Always the CommandKey AI mirror, always the release tag named in this repo's `ES_RELEASE`, never a branch tip. You do it in this session and they are done.
 2. **They want the pieces WIRED TOGETHER, plus the Desktop shortcuts.** That is what the full installer is for. It finds what they already have, keeps it exactly where it is, adds only what is missing, and connects everything. It never duplicates a piece they already use and it never deletes anything they built.
 
 **If they choose the installer, be precise about how it runs, because this trips people up:** it has to start in a NEW terminal window (PowerShell on Windows), not inside this session. That is not a technicality: the installer only becomes the installer when it opens in its own folder, and it will interview them from scratch about which pieces they want.
@@ -65,17 +65,17 @@ Give them the command for their machine:
 
 Mac and Linux:
 ```
-mkdir -p ~/my-agent && cd ~/my-agent && git clone --branch es-2026.09.23-r2 --depth 1 https://github.com/ExecutiveStack/fullstack-agent && cd fullstack-agent && claude "set me up"
+mkdir -p ~/my-agent && cd ~/my-agent && git clone --branch es-2026.10.01-r3 --depth 1 https://github.com/commandkey-ai/fullstack-agent && cd fullstack-agent && claude "set me up"
 ```
 
-Windows (PowerShell; the `$h` value is the release zip's SHA-256. Their Executive Stack contact sends it with the command, and the same hash is published in the release notes of the fullstack-agent GitHub Release for the tag, github.com/ExecutiveStack/fullstack-agent/releases/tag/es-2026.09.23-r2, so the two can be checked against each other):
+Windows (PowerShell; the `$h` value is the release zip's SHA-256. Their CommandKey AI contact sends it with the command, and the same hash is published in the release notes of the fullstack-agent GitHub Release for the tag, github.com/commandkey-ai/fullstack-agent/releases/tag/es-2026.10.01-r3, so the two can be checked against each other):
 ```
-$t="es-2026.09.23-r2"; $h="ES-MIRROR-FSA-ZIP-SHA256"; $d="$env:USERPROFILE\.local\bin"; if (Test-Path "$d\claude.exe") { $env:Path="$d;$env:Path" }; New-Item -ItemType Directory -Force -Path $HOME\my-agent | Out-Null; cd $HOME\my-agent; if (-not (Test-Path fullstack-agent\fullstack-agent.md)) { Invoke-WebRequest "https://github.com/ExecutiveStack/fullstack-agent/releases/download/$t/fullstack-agent-$t.zip" -OutFile fsa.zip; if ((Get-FileHash fsa.zip -Algorithm SHA256).Hash -ne $h) { Remove-Item fsa.zip; throw "download hash mismatch: refusing to install" }; Expand-Archive fsa.zip . -Force; New-Item -ItemType Directory -Force -Path fullstack-agent | Out-Null; Get-ChildItem "fullstack-agent-$t" -Force | Copy-Item -Destination fullstack-agent -Recurse -Force; Remove-Item "fullstack-agent-$t" -Recurse -Force; Remove-Item fsa.zip }; cd fullstack-agent; if (Get-Command claude -ErrorAction SilentlyContinue) { claude "set me up" } else { Write-Output "Claude Code is not installed yet. Install it first from https://claude.com/claude-code then paste this again." }
+$t="es-2026.10.01-r3"; $h="ES-MIRROR-FSA-ZIP-SHA256"; $d="$env:USERPROFILE\.local\bin"; if (Test-Path "$d\claude.exe") { $env:Path="$d;$env:Path" }; New-Item -ItemType Directory -Force -Path $HOME\my-agent | Out-Null; cd $HOME\my-agent; if (-not (Test-Path fullstack-agent\fullstack-agent.md)) { Invoke-WebRequest "https://github.com/commandkey-ai/fullstack-agent/releases/download/$t/fullstack-agent-$t.zip" -OutFile fsa.zip; if ((Get-FileHash fsa.zip -Algorithm SHA256).Hash -ne $h) { Remove-Item fsa.zip; throw "download hash mismatch: refusing to install" }; Expand-Archive fsa.zip . -Force; New-Item -ItemType Directory -Force -Path fullstack-agent | Out-Null; Get-ChildItem "fullstack-agent-$t" -Force | Copy-Item -Destination fullstack-agent -Recurse -Force; Remove-Item "fullstack-agent-$t" -Recurse -Force; Remove-Item fsa.zip }; cd fullstack-agent; if (Get-Command claude -ErrorAction SilentlyContinue) { claude "set me up" } else { Write-Output "Claude Code is not installed yet. Install it first from https://claude.com/claude-code then paste this again." }
 ```
 
 Tell them what to expect: a fresh Claude Code session opens with the installer already talking. It asks their name, who their agent should be, and which pieces they want. Anything they already have gets found and kept. Their visualizer config gets picked up and wired to the voice, so the face starts performing their real conversation instead of a demo.
 
-**Support:** for anything beyond what the guides cover, their Executive Stack contact.
+**Support:** for anything beyond what the guides cover, their CommandKey AI contact.
 
 Offer all of this, do not push it. If they say "just this piece for now," tell them good choice and get out of the way.
 
@@ -98,10 +98,10 @@ A double-clicked `.command` launches with a bare system PATH containing only the
 
 **Do NOT set this to run at login.** A server starting on every boot for someone who may want the face occasionally is presumptuous, and a hidden autostart entry is exactly the shape antivirus flags. The icon is the whole feature: they click it when they want the face.
 
-**A second icon beside it (macOS only): `Update <name>`.** Same rules: the export line, a visible window, executable, tested by double-click. After the export, `cd` to the ai-visualizer folder and run `./update.sh`. The script does everything itself: shows what is arriving and asks y/N before applying it (`--yes` skips the question, for you running it from chat), wires a zip-downloaded folder to the Executive Stack mirror on its first run (pinned to the release in `ES_RELEASE`), only ever moves to a release tag Executive Stack has published, and can never touch their `ai-visualizer.json`. And when you hand the icon over, say the update half out loud: "if you ever want the current Executive Stack release, double-click `Update <name>`; it shows you what changed, asks, and it never touches your files." On Windows, skip the Update shortcut; tell them to say "update ai-visualizer to the current Executive Stack release and tell me what changed" in any chat session, and when they do, YOU perform exactly what `update.sh` does: confirm `git remote get-url origin` is `https://github.com/ExecutiveStack/ai-visualizer` (a trailing `.git` is fine; anything else, stop and say so, never re-point it), fetch the mirror with tags, read the release name from `origin/es-release:ES_RELEASE`, check it is of the form `es-YYYY.MM.DD-rN`, verify `git show <tag>:ES_RELEASE` prints the tag's own name, then check out that tag; never a branch tip.
+**A second icon beside it (macOS only): `Update <name>`.** Same rules: the export line, a visible window, executable, tested by double-click. After the export, `cd` to the ai-visualizer folder and run `./update.sh`. The script does everything itself: shows what is arriving and asks y/N before applying it (`--yes` skips the question, for you running it from chat), wires a zip-downloaded folder to the CommandKey AI mirror on its first run (pinned to the release in `ES_RELEASE`), only ever moves to a release tag CommandKey AI has published, and can never touch their `ai-visualizer.json`. And when you hand the icon over, say the update half out loud: "if you ever want the current CommandKey AI release, double-click `Update <name>`; it shows you what changed, asks, and it never touches your files." On Windows, skip the Update shortcut; tell them to say "update ai-visualizer to the current CommandKey AI release and tell me what changed" in any chat session, and when they do, YOU perform exactly what `update.sh` does: confirm `git remote get-url origin` is `https://github.com/commandkey-ai/ai-visualizer` (a trailing `.git` is fine; anything else, stop and say so, never re-point it), fetch the mirror with tags, read the release name from `origin/es-release:ES_RELEASE`, check it is of the form `es-YYYY.MM.DD-rN`, verify `git show <tag>:ES_RELEASE` prints the tag's own name, then check out that tag; never a branch tip.
 
 If they already installed through fullstack-agent, they have these shortcuts already; skip this phase rather than making a second set.
 
 ## Phase 6: Hand it over
 
-Show them the keys (F for fullscreen, Space for the board's cinematic flythrough), the SND toggle on mouse move, and where the config lives. If they stream, point them at the OBS section in the README. Tell them how updates work: Executive Stack publishes reviewed releases. On macOS, double-clicking `Update <name>` gets them (it shows what changed first and asks before applying). On any platform, "update ai-visualizer to the current Executive Stack release and tell me what changed" works in any session. Then get out of the way: the face runs itself from here.
+Show them the keys (F for fullscreen, Space for the board's cinematic flythrough), the SND toggle on mouse move, and where the config lives. If they stream, point them at the OBS section in the README. Tell them how updates work: CommandKey AI publishes reviewed releases. On macOS, double-clicking `Update <name>` gets them (it shows what changed first and asks before applying). On any platform, "update ai-visualizer to the current CommandKey AI release and tell me what changed" works in any session. Then get out of the way: the face runs itself from here.
